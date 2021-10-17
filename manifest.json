@@ -1,0 +1,32 @@
+{
+	"name": "Code Viewer",
+	"description": "Extension to beautify json code.",
+	"version": "1.0",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"js": [
+				"convertJSON.js",
+				"content.js"
+			],
+			"matches": [
+				"<all_urls>"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": [{
+			"resources": ["convertJSON.js"],
+			"matches": ["<all_urls>"]
+    }],
+	"permissions": [
+		"webRequest",
+		"scripting"
+	],
+	"host_permissions": [
+		"<all_urls>"
+	]
+}

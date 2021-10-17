@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
+body {
+	font-family: 'Consolas';
+	font-size: 13px;
+	color: rgb(200, 200, 200);
+	background-color: rgb(20, 20, 20);
+	tab-size: 4;
+}
+
+div.p {
+	margin: 0;
+	line-height: 15px;
+}
+
+.object > *, .array > * {
+	display: inline;
+}
+
+a {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 14px;
+	color: rgb(227, 70, 136);
+	text-decoration: none;
+	user-select: none;
+}
+
+.key {
+	color: rgb(204, 119, 50);
+}
+
+.value {
+	color: rgb(122, 163, 98);
+}
