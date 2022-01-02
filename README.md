@@ -1,8 +1,8 @@
 # CodeViewer
 Web extension to beautify json code.
 
-![](/exampleImages/exampleOriginal.png)
+![](/exampleImages/exampleOriginal.png)\
 *Original JSON.*
 
-![](/exampleImages/exampleResult.png)
+![](/exampleImages/exampleResult.png)\
 *Result JSON.*
