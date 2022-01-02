@@ -1,18 +1,9 @@
 var elements;
 var contentNode = document.querySelector("body > pre");
 var indentation = 0;
-//new XMLSerializer().serializeToString(document)
 
-//Define if document is xml or json
 if(contentNode != null) {
 	var text = contentNode.innerText;
-	
-	//var xmlDoc = isXML(text);
-	if(false) {
-		console.log("isXML");
-		formatXML(xmlDoc);
-	} else if(isJSON(text)) {
-		console.log("isJSON");
 		var objJSON = JSON.parse(text);
 		elements = "<div class='p'>{</div>";
 		findWhich(objJSON);
@@ -27,7 +18,6 @@ if(contentNode != null) {
 			}, function(res2) {
 			});
 		});
-	}
 }
 
 function isJSON(str) {
@@ -37,14 +27,6 @@ function isJSON(str) {
 	str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
 	str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
 	return (/^[\],:{}\s]*$/).test(str);
-}
-
-function isXML(str) {
-	var parser = new DOMParser();
-	var xmlDoc;
-	xmlDoc = parser.parseFromString(text,"text/xml");
-	console.log(xmlDoc);
-	return xmlDoc;
 }
 
 function findIndent() {
