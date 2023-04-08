@@ -38,7 +38,9 @@ function format(val, hasProp, strEnd) {
 	} else {
 		if(!hasProp)
 			elements += '<div class="p" style="white-space:pre">' + findIndent();
-    if(typeof val === 'number')
+    if(typeof val === 'boolean') {
+      elements += '<span class="boolean">' + val + '</span>' + strEnd + '</div>';
+    } else if(typeof val === 'number')
       elements += '<span class="number">' + val + '</span>' + strEnd + '</div>';
     else {
       var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;

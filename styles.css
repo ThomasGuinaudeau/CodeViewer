@@ -37,9 +37,13 @@ a {
 	color: rgb(104, 151, 187);
 }
 
+.boolean {
+  color: rgb(152, 118, 170);
+}
+
 .link {
   font-size: 13px;
-  color: rgb(152, 118, 170);
+  color: rgb(255, 198, 109);
 }
 
 .size {
