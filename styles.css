@@ -26,9 +26,23 @@ a {
 }
 
 .key {
-	color: rgb(204, 119, 50);
+  color: rgb(204, 119, 50);
 }
 
 .value {
-	color: rgb(122, 163, 98);
+  color: rgb(106, 135, 89);
+}
+
+.number {
+	color: rgb(104, 151, 187);
+}
+
+.link {
+  font-size: 13px;
+  color: rgb(152, 118, 170);
+}
+
+.size {
+  color: rgb(120, 120, 120);
+  user-select: none;
 }

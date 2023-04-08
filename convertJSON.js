@@ -38,7 +38,15 @@ function format(val, hasProp, strEnd) {
 	} else {
 		if(!hasProp)
 			elements += '<div class="p" style="white-space:pre">' + findIndent();
-		elements += '<span class="value">"' + val + '"</span>' + strEnd + '</div>';
+    if(typeof val === 'number')
+      elements += '<span class="number">' + val + '</span>' + strEnd + '</div>';
+    else {
+      var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      val = val.replace(urlRegex, function(url) {
+          return '<a class="link" href="' + url + '">' + url + '</a>';
+      });
+      elements += '<span class="value">"' + val + '"</span>' + strEnd + '</div>';
+    }
 	}
 }
 
@@ -56,7 +64,7 @@ function htmlStart(type, hasProp, size) {
 	
 	if(!hasProp)
 		elements += '<div class="p" style="white-space:pre">' + findIndent() + "";
-	elements += (type == "object" ? '{ ' : '[ ') + '</div>';
+	elements += '<span class="size">' + type + '(' + size + ') </span>' + (type == "object" ? '{ ' : '[ ') + '</div>';
 	if(size > 0)
 		elements += '<a href="#" onclick="return false;">-</a>';
 	elements += '<div class="values">';
